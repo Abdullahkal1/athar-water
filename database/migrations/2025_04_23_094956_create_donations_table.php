@@ -11,15 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('donations', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // ربط بالمستخدم
-            $table->foreignId('order_id')->nullable()->constrained()->onDelete('set null'); // ربط بالطلب (اختياري)
-            $table->integer('quantity'); // الكمية
-            $table->string('recipient'); // الجهة المستلمة
-            $table->string('status')->default('pending'); // الحالة
-            $table->timestamps();
-        });
+        
     }
 
     /**
